@@ -2,7 +2,6 @@
 const readline = require('readline');
 const fs = require('fs');
 const path = require('path');
-const token = process.env.TOKEN;
 
 const mapSources = [
     { key: 'x3 Bazinga', paths: [path.join(__dirname, 'x3 Bazinga.hbs'), path.join(__dirname, '..', 'haxmaps', 'x3 Bazinga.hbs')] },
@@ -1208,11 +1207,8 @@ async function iniciarHost(token) {
     }, token, maps, mapNames, savedStats, savedAccounts);
 }
 
-const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-rl.question('Pegá tu Token de Haxball acá: ', (token) => {
-    iniciarHost(token.trim());
-    rl.close();
-});
+const token = process.env.TOKEN;
+iniciarHost(token);
 
 
 
