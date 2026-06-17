@@ -2,6 +2,7 @@
 const readline = require('readline');
 const fs = require('fs');
 const path = require('path');
+const token = process.env.TOKEN;
 
 const mapSources = [
     { key: 'x3 Bazinga', paths: [path.join(__dirname, 'x3 Bazinga.hbs'), path.join(__dirname, '..', 'haxmaps', 'x3 Bazinga.hbs')] },
