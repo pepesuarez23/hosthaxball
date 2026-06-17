@@ -1,12 +1,14 @@
-const http = require('http');
-http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Bot activo\n');
-}).listen(process.env.PORT || 3000);
-const puppeteer = require('puppeteer');
-const readline = require('readline');
-const fs = require('fs');
-const path = require('path');
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
 const mapSources = [
     { key: 'x3 Bazinga', paths: [path.join(__dirname, 'x3 Bazinga.hbs'), path.join(__dirname, '..', 'haxmaps', 'x3 Bazinga.hbs')] },
